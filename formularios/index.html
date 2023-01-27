@@ -8,10 +8,23 @@
     <meta name="description" content="Mi primera página web" />
     <meta name="keywords" content="Html, Css, Javascript, TypeScript, Angular" />
     <meta name="author" content="Néstor Arroyo" />
-    <title>Página de ejemplo</title>
+    <title>Formularios</title>
 </head>
 <body>
-  <h1>Hola peña</h1>
+  <form>
+    <label for="nombre">
+        Nombre: <input type="text" name="nombre" id="nombre" size="80"  />
+    </label>
+    <br>
+    <label for="apellidos">
+        Apellidos: <input type="text" name="apellidos" id="apellidos" size="80"  placeholder="apellido por defecto" />
+    </label>
+    <br>
+    <label>
+        Password: <input type="password" name="password" size="12" minlength="6" maxlength="12" />
+    </label>
+</form>
+
     
 </body>
 </html>
