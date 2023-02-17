@@ -9,33 +9,62 @@
     <meta name="keywords" content="Html, Css, Javascript, TypeScript, Angular" />
     <meta name="author" content="Néstor Arroyo" />
     <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <form>
+    <h1>EJERCICIO 2</h1>
+    <form action="segundo.html" method="get">
         <fieldset>
             <legend>Datos básicos</legend>
             <label for="nombre">
-                Nombre: <br>
-                <input type="text" name="nombre" id="nombre" size="80" required>
+                Nombre<br>
+                <input style="width: 350px;" type="text" name="nombre" id="nombre" minlength="5" maxlength="50" required>
+            </label>
+            <br><br>
+            <label>
+                Descripción<br>
+                <textarea name="descripcion" rows="4" cols="50"></textarea>
+            </label>
+            <br><br>
+            <label>
+                Foto: <input type="file" name="foto" id="fileInput" accept="image/*">
             </label>
             <br>
-            <label>Descripción<br>
-                <textarea name="opinion" id="opinion" cols="20" rows="5" placeholder="Escribe aquí..."></textarea>
-            </label>
-            <label>
-                Foto <input type="file" name="file" accept="image/*" multiple> <br>
-                <label>
-                    <input type="radio"  name="contador" value="contador"> Añadir contador de visitas
-                </label>
-            
-
-            </label>
-
-
+            <p>
+                <input type="checkbox">Añadir contador de visitas
+            </p>
         </fieldset>
-        <form action="segundo.html" method="get"></form>
+        <br>
+        <fieldset>
+            <legend>Datos económicos</legend>
+            <label for="precio">
+                Precio
+                <input style="width:50px" type="number" name="precio" id="precio" required>
+                €
+            </label>
+            <label>&emsp; Impuestos
+                <select name="impuestos" id="impuestos">
+                    <option value="4">4%</option>
+                    <option value="7">7%</option>
+                    <option value="16">16%</option>
+                    <option value="25">25%</option>
+                </select>
+            </label>
+            <br><br>
+            <label>
+                <input type="radio" name="promocion" value="N" checked>Ninguno
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="promocion" value="G">Transporte gratuito
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="promocion" value="D">Descuento 5%
+            </label>
+            <br>
+        </fieldset>
         <input type="submit" value="2a pantalla">
-
-        </form>
+    </form>
 </body>
 </html>

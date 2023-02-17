@@ -2,20 +2,25 @@
 <html lang="es">
 <head>
     <!--Etiquetas obligatorias-->
-    <meta charset="UTF-8" />   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
+    <meta charset="UTF-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <!--Etiquetas opcionales-->
-    <meta name="description" content="Mi primera página web" />
-    <meta name="keywords" content="Html, Css, Javascript, TypeScript, Angular" />
-    <meta name="author" content="Néstor Arroyo" />
+    <meta name="description" content="Mi primera página web">
+    <meta name="keywords" content="Html, Css, Javascript, TypeScript, Angular">
+    <meta name="author" content="Néstor Arroyo">
     <title>Segundo</title>
 </head>
+
 <body>
-    <h1>Hola peña</h1>
-    <!-- Control + K + C para comentar -->
-        <!-- table>(tr>th*6)+(tr*6>td*6) -->
-        <!-- ul>li*6 -->
-        <!-- ol>li*6 -->
+    <script>
+        const parametros = new URLSearchParams(window.location.search);
+        let nombre = parametros.get('nombre');
+        console.log(nombre);
+        parametros.forEach(e=>{console.log(e)});
+        document.body.innerHtml = "<h1>Hola: " + parametros.get('nombre') +  "</h1><br>"
+        document.body.innerHTML += "<h2> Se ha gastado usted: " + parametros.get('precio') + " euros</h2>"
+
+    </script>
 
 </body>
 </html>

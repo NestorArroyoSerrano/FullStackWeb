@@ -1,5 +1,8 @@
-	
-	function pedirNumero(){
+function pedirAusuario(opcion){
+
+		
+
+	if(opcion=="numero"){
 		let numero;
 		do{
 			numero=prompt("Dame un numero");
@@ -12,55 +15,126 @@
 		}while(isNaN(numero) || numero=="" || numero<1 || numero>10);	
 		return +numero;
 	}
-	
-	let num1=pedirNumero();
-	let num2=pedirNumero();
-	
-	let modo;
-	
-	do{
-		modo=prompt("Dame el Modo de Visualización (PARRAFOS/LISTA/TABLA)");
-		if(modo!="PARRAFOS" && modo!="LISTA" && modo!="TABLA")
-			alert("Error! no me has puesto un modo válido");
-	}while(modo!="PARRAFOS" && modo!="LISTA" && modo!="TABLA");
 
-	let tabla,filas;
-	
-	if(num1>num2){
-		tabla=num2;
-		filas=num1;
+	else if(opcion=="modo"){
+		let modo;
+		do{
+			modo=prompt("Dame el Modo de Visualización (PARRAFOS/LISTA/TABLA/DESPLEGABLE/SALIR)").toLocaleUpperCase();
+			if(modo!="PARRAFOS" && modo!="LISTA" && modo!="TABLA" && modo!="DESPLEGABLE" && modo!="SALIR")
+				alert("Error! no me has puesto un modo válido");
+			}while(modo!="PARRAFOS" && modo!="LISTA" && modo!="TABLA" && modo!="DESPLEGABLE" && modo!="SALIR");
+			return modo;
+
 	}
+
 	else{
-		tabla=num1;
-		filas=num2;			
-	}	
-	
-	if(modo=="LISTA"){
-		document.write("<ul>");
-		for(let i=1;i<=filas;i++)
-			document.write("<li>"+tabla+"x"+i+"="+(tabla*i)+"</li>");
-		document.write("</ul>");
+		alert("Error!, opción no válida");
+		return -1;
 	}
-	else if(modo=="PARRAFOS"){
-		
-	}
-	else if(modo=="TABLA"){
-		
-	}
-	else if(modo=="DESPLEGABLE"){
-		<select>
-			<option>
-				
-			</option>
-		</select>
-		
-	}
-	/*function hacerLista(){
-		document.write("<tabla>");
-		for(let i=1 ; i<=grande ;i++)
-			document.write("<li>"+peque+"x"+i+"="+(peque*i)+"</li>");
 
-		document.write("</ul>");
-	}*/
+}
+
+function mayor(x,y){
+
+	if(x>y)
+		return x;
+	else
+		return y;
+
+}
+
+function menor(x,y){
+	if(x>y)
+		return y;
+	else
+		return x;
+
+}	
+
+
+
+function hacerEstructuraBasica(menor,mayor,item1,item2,item3,item4){
+	document.write(item1);
+	for(let i=1;i<=mayor;i++)
+		document.write(item2+menor+"x"+i+"="+(menor*i)+item3);
+	document.write(item4);		
+
+}
+
+function hacerTabla(menor,mayor){
+	document.write("<table style='border:1px solid black; border-collapse:collapse;'>");
+	for(let i=1;i<=mayor;i++)
+	//document.write("<tr><td>"+tabla+"x"+i+"</td><td>=</td><td>"+(tabla*i)+"</td></tr>");
+		{
+			document.write("<tr>");
+			document.write("<td style='border:1px solid black;'>"+menor+"x"+i+"</td>");
+			document.write("<td style='border:1px solid black;'>=</td>")>
+			document.write("<td style='border:1px solid black;'>"+(menor*i)+"</td>");
+			document.write("</tr>");		
+		}
+	document.write("</table>");			
+
 	
-	
+
+}
+
+
+
+function menu(){
+	let opcionElegida,modo;
+
+	do{
+
+		modo=pedirAusuario("modo");
+		let num1,num2,tabla,filas;
+		if(modo!="SALIR"){
+
+			num1=pedirAusuario("numero");
+
+			num2=pedirAusuario("numero");
+
+			tabla=menor(num1,num2);
+
+			filas=mayor(num1,num2);
+
+		}
+
+		switch(modo){
+
+			case "LISTA":
+							//hacerLista(tabla,filas);
+							hacerEstructuraBasica(tabla,filas,"<ul>","<li>","</li>","</ul>");
+							break;
+			case "PARRAFOS":
+							//hacerParrafos(tabla,filas);
+							hacerEstructuraBasica(tabla,filas,"<div style='border:1px solid black;'>","<p>","</p>","</div>");
+							break;		
+			case "TABLA":
+							hacerTabla(tabla,filas);
+							break;
+
+			case "DESPLEGABLE":
+							//hacerDesplegable(tabla,filas);
+							hacerEstructuraBasica(tabla,filas,"<select>","<option>","</option>","</select>");
+							break;	
+			case "SALIR":
+							alert("Hasta luego");
+
+		}
+
+	}while(modo!="SALIR");			
+
+}
+
+/*function hacerLista(menor,mayor){
+
+	document.write("<ul>");
+
+	for(let i=1;i<=mayor;i++)
+
+		document.write("<li>"+menor+"x"+i+"="+(menor*i)+"</li>");
+
+	document.write("</ul>");			
+
+}
+*/
