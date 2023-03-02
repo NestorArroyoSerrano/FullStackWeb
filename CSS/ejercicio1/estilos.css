@@ -82,3 +82,35 @@ ol {
 #unh2concreto { /*identificadores id=*/
 color: gold;
 }
+#textoprincipal {
+    width: 350px;
+    height: 150px;
+    margin: 10px;
+    padding: 25px;
+    border: 5px solid black;
+}
+#listadesordenada {
+    border: 5px solid red;
+    background-color: lightgray; 
+    padding: 10px; 
+    margin: 25px; 
+    width: 250px; 
+    height: 200px;   
+}
+.caja1 {
+    width: 250px;
+    height: 200px;
+    border: 5px solid red;
+    background-color: lightgray;
+    padding: 10px;
+    margin: 25px;
+}
+.caja2 {
+    width: 300px;
+    height: 200px;
+    border: 7px solid green;
+    background-color: lightgray;
+    color: white;
+    padding: 5px;
+    margin: 0px;
+}

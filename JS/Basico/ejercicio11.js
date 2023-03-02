@@ -16,7 +16,7 @@ METERLOS EN 2 VARIABLE (peque y grande)
 	  NEGATIVOS:2
 	 SUMA TOTAL:18
 	FACTORIAL 6:720 = 6*5*4*3*2*1
-   
+  
    
    
    
@@ -106,3 +106,5 @@ METERLOS EN 2 VARIABLE (peque y grande)
 			console.log("FACTORIAL DE "+grande+":"+factorial);
 		else
 			console.log("NO HAY FACTORIAL");
+
+			

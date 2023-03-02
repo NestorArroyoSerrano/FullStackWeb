@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio eventos</title>
+    <script>
+window.onload = function() {
+            // Acceder al nodo título
+            let titulo = document.querySelector('h1');
+            
+            // Añadir evento click al título
+            titulo.addEventListener('click', eliminarUltimoParrafo);
+
+            // Función que elimina el último párrafo
+            function eliminarUltimoParrafo() {
+                // Acceder al último párrafo
+                let parrafos = document.querySelectorAll('p');
+                let ultimoParrafo = parrafos[parrafos.length - 1];
+                if (parrafos.length === 0) {
+                    alert('No hay párrafos disponibles para eliminar.');
+                    return;
+                }
+
+                // Eliminar el último párrafo
+                ultimoParrafo.parentNode.removeChild(ultimoParrafo);
+            }
+        };
+        /*Primero, esperamos a que se cargue la página usando window.onload para asegurarnos de que los nodos están disponibles antes de intentar acceder a ellos.
+Luego, accedemos al nodo h1 usando document.querySelector('h1').
+Añadimos un evento click al nodo h1 usando titulo.addEventListener('click', eliminarUltimoParrafo).
+Creamos la función eliminarUltimoParrafo que se ejecutará cuando se haga clic en el nodo h1.
+En la función eliminarUltimoParrafo, accedemos a todos los nodos p usando document.querySelectorAll('p').
+Accedemos al último nodo p en la lista de nodos p usando parrafos[parrafos.length - 1].
+Si no hay ningún nodo p disponible, mostramos un mensaje de error utilizando alert('No hay párrafos disponibles para eliminar.') y salimos de la función utilizando return.
+Finalmente, eliminamos el último nodo p usando ultimoParrafo.parentNode.removeChild(ultimoParrafo).
+*/
+/*
+1) Pedir al usuario cantidad
+
+	2) Crear un desplegable con tantos option como el numero que ha dado.
+
+	Elemento 1 ... Elemento N
+
+	3) Crear tanto RADIOBUTTON como elemento tambien
+
+	4) Si cambias el valor del radio, se cambie el desplegable y viceversa
+    */
+
+
+    </script>
+</head>
+<body>
+<h1>TITULO</h1>
+    <p>PARRAFO 1</p>
+    <p>PARRAFO 2</p>
+    <p>PARRAFO 3</p>
+    <p>PARRAFO 4</p>
+
+</body>
+</html>
+
+

@@ -3,11 +3,11 @@
     <script language="JavaScript">
  function mostrarForm(miform) {
      NuevaVentana=window.open('','','width=300,height=200');//open('URL','nombre_ventana','características'); http://www.lgm.cl/trabajos/params.html
-     entrada_nombre="<b>Tu nombre: " + miform.nombre_usuario.value
-           + "</b><br>";
+     entrada_nombre="<strong>Tu nombre: " + miform.nombre_usuario.value
+           + "</strong><br>";
      NuevaVentana.document.write(entrada_nombre);
-       entrada_telefono="<b>Tu teléfono: " + miform.telefono_usuario.value
-           + "</b><br>";
+       entrada_telefono="<strong>Tu teléfono: " + miform.telefono_usuario.value
+           + "</strong><br>";
      NuevaVentana.document.write(entrada_telefono);
     }
   function cerrar_ventana(){

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="content-type" content="text/html" />
+<meta name="author" content="Néstor" />
+<title>Untitled 2</title>
+ <script>
+//aplicamos función cuando se carga la página en el navegador.
+ window.onload = function() {
+//variable que toma el Id “información” esta función se encuentra más adelante.
+info=document.getElementById("informacion");
+ //número de títulos h1 en todo el documento.
+ let mostrarh1=document.getElementsByTagName("h1");
+ //escribe dentro de info (innerHTML) en el id “información” y pone texto + cuántos elementos
+//hay en mostrarh1.
+ info.innerHTML="estos son los h1 "+mostrarh1.length;
+ let negritasPagina=document.getElementsByTagName("strong");
+ info.innerHTML+="<br>Cantidad de negritas en la página " +negritasPagina.length;
+ let smallPagina=document.getElementsByTagName("strong");
+ info.innerHTML+="<br>Cantidad de small en la página " +smallPagina.length;
+
+ let p2=document.getElementsByTagName("p")[1]; // para sacar las del documento entero
+ let negritasP2=p2.getElementsByTagName("strong"); // para sacar solo las del párrafo 2
+ info.innerHTML+="<br>Cantidad de negritas párrafo " +negritasP2.length;
+
+ /*
+ CANTIDAD NEGRITAS EN LA PÁGINA:
+ CANTIDAD SMALL EN LA PÁGINA:
+ CANTIDAD NEGRITAS EN EL PÁRRAFO2:
+
+ */
+
+ }
+ </script>
+</head>
+<body>
+<div id="informacion" style= "border:thin solid silver; padding:.5em"></div>
+<h1>Ejemplo1</h1>
+<p>Este es el primer párrafo del ejemplo, vamos a introducir <strong>negrita</strong> y <i>cursiva</i></p>
+<h2>ejemplo 2</h2>
+<p><small>Este <strong>es</strong> el segundo <strong>párrafo</strong> más pequeño</small> </p>
+<h1>ejemplo 3</h1>
+<p> Este es el tercer <strong>párrafo</strong> más grande</p>
+</body>
+</html>

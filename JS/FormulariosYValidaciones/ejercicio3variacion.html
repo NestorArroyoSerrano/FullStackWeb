@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio Eventos</title>
+	<link rel="stylesheet" href="ejercicio3variacion.css">
+	<script>
+		// 1) Capturar evento submit (en el form)
+		// 2) Llama a validar
+		// 3) Validas que filas y columnas sean numeros, si no
+		// un alert de error.
+		// 4) Si todo esta bien llamas a lanzar con los valores
+		// de fichas y columnas
+
+		window.onload = function () {
+			document.form.onsubmit = validar;
+			
+		}
+
+		function validar() {
+			let filas = document.form.filas.value
+			let columnas = document.form.columnas.value
+
+			if (isNaN(filas) || filas < 1) {
+				alert("Las filas deben ser un numero");
+				return false;
+			}
+			if (isNaN(form.columnas.value) || form.columnas.value < 1) {
+				alert("Las filas deben ser un numero");
+				return false;
+			}
+			lanzar(filas,columnas)
+			return false;
+		}
+		
+		function lanzar(filas, columnas) {
+			let table = document.getElementsByTagName("table")[0]
+			table.id = "table"
+			let num = 1
+			for (let i = 1; i <= filas; i++) {
+				let row = document.createElement("tr")
+				for (let j = 1; j <= columnas; j++) {
+					let celda = document.createElement("td")
+					celda.id = "celda" + num
+					celda.innerText = num++
+
+					celda.addEventListener("click", function () {
+						celda.innerText *= 2
+					})
+
+					row.appendChild(celda)
+				}
+				table.appendChild(row)
+			}
+		}
+		
+
+	</script>
+
+
+</head>
+
+<body>
+	<form name="form" action="#">
+		<p><label>Filas:<input type="text" name="filas"></label></p>
+		<p><label>Columnas:<input type="text" name="columnas"></label></p>
+		<p><input type="submit" value="Lanzar"></p>
+	</form>
+
+	<table>
+
+	</table>
+</body>
+
+</html>
